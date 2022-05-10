@@ -5,7 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(/images/sw-background-1.jpg) no-repeat center center fixed;
+   /* background: url(/images/sw-background-1.jpg) no-repeat center center fixed; 
+   URL isnt working */
     background-size: cover;
 }
 
@@ -64,3 +65,17 @@ li + li {
 #card:empty {
     display: none;
 }
+
+/* #button {
+    background-color: #4CAF50; /* Green */
+    /* border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  } 
+  how do i add the button CSS to the sheet without adding the button 
+  to the page? when you add button to HTML
+  */ 

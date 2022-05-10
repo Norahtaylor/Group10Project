@@ -15,11 +15,11 @@ const shipList = document.getElementById("list")
 
 //elements created 
 const cardImage = document.createElement('img')
-         const cardName = document.createElement('h2')
-         const cardButton = document.createElement('button')
-         const species = document.createElement('p') 
-         const origin = document.createElement('p')
-         const dblClick = document.createElement('p')
+const cardName = document.createElement('h2')
+const cardButton = document.createElement('button')
+const species = document.createElement('p') 
+const origin = document.createElement('p')
+const dblClick = document.createElement('p')
 
 //function to iterate through array 
 function renderData(data) {
@@ -41,7 +41,8 @@ function renderData(data) {
          origin.textContent = `Origin: ${info.origin}`
     
          cardButton.style.textAlign = "center" // how do we center the button?
-         cardButton.innerHTML = " "
+         cardButton.innerHTML = " " //can we edit the button style in innerHTML? 
+         //add button event listener 
          
          shipCard.append(cardName, cardImage, dblClick, species, origin, cardButton)
         //  shipCard.reset() why isnt this reset working? 

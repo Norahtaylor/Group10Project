@@ -16,11 +16,13 @@ const closeButton = document.getElementById("close")
 
 //elements created 
 const cardImage = document.createElement('img')
-const cardName = document.createElement('h2')
+const cardName = document.createElement('h1')
 const cardButton = document.createElement('button')
 const species = document.createElement('p') 
 const origin = document.createElement('p')
-const dblClick = document.createElement('p')
+const dblClick = document.createElement('h5')
+
+    
 
 //function to iterate through array 
 function renderData(data) {
@@ -38,22 +40,14 @@ function renderData(data) {
          cardImage.classList.add('pic');
          cardImage.dataset.name = info.name;
          cardImage.dataset.origin = info.origin;
-         cardImage.addEventListener('dblclick', (e) => {
-            alert(`Greetings, human. I am ${e.target.dataset.name}, from ${e.target.dataset.origin}.`)
-         })
 
-         dblClick.innerHTML = "<em>Double click above for a message.</em>"
+
+         dblClick.innerHTML = "<em>Double click above for a message from me!</em>"
     
          species.textContent = `Species: ${info.species}`
          origin.textContent = `Origin: ${info.origin}`
-    
-         cardButton.style.textAlign = "center" // how do we center the button?
-         cardButton.innerHTML = "" //can we edit the button style in innerHTML? 
-         //add button event listener 
          
-         
-         shipCard.append(cardName, cardImage, dblClick, species, origin, cardButton)
-        //  shipCard.reset() why isnt this reset working? :corey did we get this one?
+         shipCard.append(cardName, cardImage, dblClick, species, origin)
 
         outerCard.classList.remove('hide');
        
@@ -62,25 +56,15 @@ function renderData(data) {
     }
 
 }
-
+// click event for closeout button
 closeButton.addEventListener('click', (e) => {
     outerCard.classList.add('hide');
 })
 
-// event listener for message from the image 
-function dblClickEvent(data) {
-    console.log(data);
-    cardImage.addEventListener('dblclick', (e) => {
-        alert(`Greetings, human. I am ${data.name}, from ${data.origin}.`)
-     })
-    }
+//click event for message from the aliens
+cardImage.addEventListener('dblclick', (e) => {
+    alert(`Greetings, human. I am ${e.target.dataset.name}, from ${e.target.dataset.origin}.`)
+ })
+
+
     
-
-
-//build starship info 
-
-// build the button for like 
-
-// build mouseover for the image 
-
-

@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-    max-width: 1280px;
+    max-width: 850px;
     margin: 0 auto;
     display: grid;
     display: grid;
@@ -68,13 +68,15 @@ li + li {
 }
 
 #card {
-    background-color: #fff;
+    background: radial-gradient(white, black);
     border-radius: 12px;
     padding: 12px;
     font-family: 'League Gothic', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     font-size: 20px;
+    text-align: center;
+    
 }
 #card:empty {
     display: none;
@@ -88,7 +90,14 @@ li + li {
     display: none;
 }
 
-
+.button {
+    background: radial-gradient(white, black);
+    padding: 13px 18px;
+    font-size: 17px;
+    font-family: 'League Gothic', sans-serif;
+    border-radius: 12px;
+    letter-spacing: 1px;
+}
 
 
 

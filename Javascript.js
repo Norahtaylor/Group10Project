@@ -1,11 +1,12 @@
 // fecth all starship data
-function getStarships() {
+
     fetch('https://finalspaceapi.com/api/v0/character')
     .then(res => res.json())
     .then(data => {
-        renderData(data) })
-}
-getStarships()
+        renderData(data)
+        // dblClickEvent(data)
+    })
+
 
 //variables 
 const shipCard = document.getElementById("card")
@@ -22,9 +23,16 @@ const species = document.createElement('p')
 const origin = document.createElement('p')
 const dblClick = document.createElement('h5')
 
-    
+cardButton.className = "button"
+
+
 
 //function to iterate through array 
+
+// const renderData = (data) => {
+//    data.forEach()
+// }
+
 function renderData(data) {
     for(const info of data) {
     const ships = document.createElement('li')
@@ -40,31 +48,39 @@ function renderData(data) {
          cardImage.classList.add('pic');
          cardImage.dataset.name = info.name;
          cardImage.dataset.origin = info.origin;
-
-
-         dblClick.innerHTML = "<em>Double click above for a message from me!</em>"
     
          species.textContent = `Species: ${info.species}`
          origin.textContent = `Origin: ${info.origin}`
+    
+        cardButton.innerHTML = "\"Double click me for a greeting!\""
+        cardButton.style.fontWeight = "bold"
+
+        cardButton.addEventListener('dblclick', (e) => {
+            alert(`Greetings, human. I am ${info.name} and I am from ${info.origin}`)
          
-         shipCard.append(cardName, cardImage, dblClick, species, origin)
+            // cardButton.innerHTML = ''
+        })
+         
+         shipCard.append(cardName, cardImage, dblClick, species, origin, cardButton)
 
         outerCard.classList.remove('hide');
        
    })
    
     }
-
 }
+
 // click event for closeout button
 closeButton.addEventListener('click', (e) => {
     outerCard.classList.add('hide');
 })
 
-//click event for message from the aliens
-cardImage.addEventListener('dblclick', (e) => {
-    alert(`Greetings, human. I am ${e.target.dataset.name}, from ${e.target.dataset.origin}.`)
- })
 
-
-    
+shipList.addEventListener("mouseover", function( event ) {
+    // highlight the mouseover target
+     event.target.style.color = 'yellow'; 
+  
+    setTimeout(function() {
+      event.target.style.color = "";
+    }, 1000);
+  }, false);

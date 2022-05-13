@@ -65,6 +65,7 @@ li + li {
     position: absolute;
     right: 8px;
     top: 8px;
+    cursor: pointer;
 }
 
 #card {
@@ -97,10 +98,6 @@ li + li {
     font-family: 'League Gothic', sans-serif;
     border-radius: 12px;
     letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: bold;
 }
-
-
-
-
-
-
